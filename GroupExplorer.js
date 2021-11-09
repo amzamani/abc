@@ -139,10 +139,10 @@ function displayGroup(group) {
 function columnSort(event /*: JQueryEventObject */) {
    const column = event.currentTarget;
    const columnIndex = $('#GroupTableHeaders th.sortable').toArray().findIndex( (th) => th == column );
-   if (columnIndex == -1) {
-      Log.err(`unknown event in columnSort`);
-      return;
-   }
+   // if (columnIndex == -1) {
+   //    Log.err(`unknown event in columnSort`);
+   //    return;
+   // }
    const makeSortUp = !$(column).hasClass('sort-up');
    $('th.sortable').removeClass('sort-down')
                    .removeClass('sort-up')
@@ -269,10 +269,10 @@ class HoverHelp {
 
    static getTooltip($cell /*: JQuery */) /*: ?JQuery */ {
       const $anchor = $cell.find('a[title]');
-      if ($anchor.length == 0) {
-         Log.err("tooltip can't find anchor in td");
-         return null;
-      }
+      // if ($anchor.length == 0) {
+      //    Log.err("tooltip can't find anchor in td");
+      //    return null;
+      // }
       const tooltipText = $anchor.attr('title');
       const $newTip = $('<div id="tooltip" class="menu">')
             .text(tooltipText)
